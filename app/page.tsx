@@ -85,6 +85,13 @@ export default function Home() {
     URL.revokeObjectURL(url);
   };
 
+  const handleCopyJSON = () => {
+    if (!results.length) return;
+    navigator.clipboard.writeText(JSON.stringify(results, null, 2)).then(() => {
+      alert("JSON copied to clipboard!");
+    });
+  };
+
   return (
     <div className="p-8 bg-gray-50 min-h-screen flex flex-col items-center">
       <h1 className="text-3xl font-bold mb-6 text-center text-blue-700">Vercel Bulk Web Scraper</h1>
@@ -111,6 +118,13 @@ export default function Home() {
           className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 transition"
         >
           Download JSON
+        </button>
+        <button
+          onClick={handleCopyJSON}
+          disabled={!results.length}
+          className="px-6 py-2 bg-yellow-600 text-white rounded-lg hover:bg-yellow-700 disabled:opacity-50 transition"
+        >
+          Copy JSON
         </button>
       </div>
 
