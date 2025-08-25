@@ -128,6 +128,24 @@ export default function Home() {
         </button>
       </div>
 
+      {/* External Conversion Buttons */}
+      <div className="flex flex-wrap gap-4 mb-6">
+        <a
+          href="https://www.convertcsv.com/json-to-csv.htm"
+          target="_blank"
+          className="px-6 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition"
+        >
+          JSON To Excel
+        </a>
+        <a
+          href="https://tableconvert.com/excel-to-json"
+          target="_blank"
+          className="px-6 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 transition"
+        >
+          Excel To JSON
+        </a>
+      </div>
+
       {progress.processed > 0 && (
         <div className="mb-4 text-gray-700">
           Processed: {progress.processed} / {urls.split("\n").filter(Boolean).length} | Fetched:{" "}
