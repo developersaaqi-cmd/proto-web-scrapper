@@ -101,7 +101,7 @@ export default function Home() {
         placeholder="Enter one URL per line"
         value={urls}
         onChange={(e) => setUrls(e.target.value)}
-        className="w-full max-w-3xl p-4 border rounded-lg mb-4 resize-none focus:outline-blue-500"
+        className="w-full max-w-3xl p-4 border rounded-lg mb-4 resize-none focus:outline-blue-500 text-black"
       />
 
       <div className="flex flex-wrap gap-4 mb-4">
@@ -154,7 +154,7 @@ export default function Home() {
       )}
 
       {results.length > 0 && (
-        <pre className="bg-white p-4 rounded-lg overflow-auto max-h-96 w-full max-w-3xl shadow-sm">
+        <pre className="bg-white p-4 rounded-lg overflow-auto max-h-96 w-full max-w-3xl shadow-sm text-black">
           {JSON.stringify(results, null, 2)}
         </pre>
       )}
